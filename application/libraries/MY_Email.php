@@ -68,7 +68,7 @@ class MY_Email extends CI_Email
      * Add queue email to database.
      * @return  mixed
      */
-    public function send($skip_job = FALSE)
+    public function send($skip_job = FALSE, $auto_clear = TRUE, $clear_attachment = FALSE)
     {
         if ( $skip_job === TRUE ) {
             return parent::send();
@@ -86,9 +86,14 @@ class MY_Email extends CI_Email
             'bcc' => $bcc,
             'message' => $this->_body,
             'headers' => serialize($this->_headers),
+            'attachments' => serialize($this->_attachments),
             'status' => 'pending',
             'date' => $date
         );
+
+        if($auto_clear) {
+            parent::clear($clear_attachment);
+        }
 
         return $this->CI->db->insert($this->table_email_queue, $dbdata);
     }
@@ -137,6 +142,8 @@ class MY_Email extends CI_Email
             $this->bcc($bcc);
 
             $this->message($email->message);
+
+            $this->_attachments = unserialize($email->attachments);
 
             if ($this->send(TRUE)) {
                 $status = 'sent';
