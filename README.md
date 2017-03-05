@@ -38,12 +38,12 @@ $this->load->library('email');
 $this->email-send();
 ```
 
-**Send to Queue and clear the attachment **
+**Send to Queue and clear the attachment**
 ```
 $this->email->send(FALSE, TRUE, TRUE);
 ```
 
-**Send to Queue without clearing the data **
+**Send to Queue without clearing the data**
 ```
 $this->email->send(FALSE, FALSE);
 ```
