@@ -9,5 +9,6 @@ CREATE TABLE `email_queue` (
   `status` enum('pending','sending','sent','failed') DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `headers` text,
+  `attachments` mediumtext,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8$$
