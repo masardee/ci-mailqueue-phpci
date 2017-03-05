@@ -1,4 +1,4 @@
-CodeIgniter Mail Queue
+CodeIgniter SendMailLater
 =====================
 
 Notice
@@ -8,7 +8,7 @@ This is a fork of https://github.com/izn/ci-mailqueue-phpci
 General Information
 -------------------
 
-CI Mail Queue is a simple library (extended from CI_Mail) to queue emails in database and send them in background with CronJobs.
+CI SendMailLater is a simple library (extended from CI_Mail) to queue emails in database and send them in background with CronJobs.
 
 Installation
 ------------
