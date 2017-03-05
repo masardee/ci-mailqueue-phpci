@@ -1,13 +1,13 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 /**
- * CodeIgniter Email Queue
+ * CodeIgniter SendMailLater
  *
  * A CodeIgniter library to queue e-mails.
  *
  * @package     CodeIgniter
  * @category    Libraries
- * @author      Thaynã Bruno Moretti
- * @link    http://www.meau.com.br/
+ * @author      Thaynã Bruno Moretti & Ardi Imawan
+ * @link    http://www.meau.com.br/ | http://ardistudio.com
  * @license http://www.opensource.org/licenses/mit-license.html
  */
 class MY_Email extends CI_Email
